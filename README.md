@@ -8,7 +8,7 @@ Jesús Santana
 
 # Link to App: 
 
-https://
+- https://
 
 * use in mode mobile device at browser, iphone X prefered
 
@@ -124,7 +124,7 @@ Event model
 ``` 
 ## Wireframe
 
-[Wireframe Link] ('https://excalidraw.com/#json=5158956179652608,ObcsWHSgXnAHjF1Jiy8QRw')
+- [Wireframe Link](https://excalidraw.com/#json=5158956179652608,ObcsWHSgXnAHjF1Jiy8QRw)
 
 ## Links
 
@@ -133,16 +133,16 @@ Event model
 
 The url to your repository and to your deployed project
 
-[Repository Link Frontend] ('https://github.com/jesussantana/MERN-PROJECT-FRONTEND')
+- [Repository Link Frontend] (https://github.com/jesussantana/MERN-PROJECT-FRONTEND)
 
-[Repository Link Backend] ('https://github.com/jesussantana/MERN-PROJECT-BACKEND')
+- [Repository Link Backend] (https://github.com/jesussantana/MERN-PROJECT-BACKEND)
 
 
-[Deploy Link] ('')
+- [Deploy Link] ('')
 
 
 ### Slides
 
 The url to your presentation slides
 
-[Slides Link](http://slides.com)
+- [Slides Link](http://slides.com)
