@@ -124,7 +124,7 @@ Event model
 ``` 
 ## Wireframe
 
-[Wireframe Link] (https://excalidraw.com/#json=5633256313585664,8wY927vnLy8R9KmVmI-kSg)
+[Wireframe Link] ('https://excalidraw.com/#json=5158956179652608,ObcsWHSgXnAHjF1Jiy8QRw')
 
 ## Links
 
@@ -133,9 +133,9 @@ Event model
 
 The url to your repository and to your deployed project
 
-[Repository Link Frontend] (https://github.com/jesussantana/MERN-PROJECT-FRONTEND)
+[Repository Link Frontend] ('https://github.com/jesussantana/MERN-PROJECT-FRONTEND')
 
-[Repository Link Backend] (https://github.com/jesussantana/MERN-PROJECT-BACKEND)
+[Repository Link Backend] ('https://github.com/jesussantana/MERN-PROJECT-BACKEND')
 
 
 [Deploy Link] ('')
