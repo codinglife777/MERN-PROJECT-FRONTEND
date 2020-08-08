@@ -2,8 +2,6 @@
 
 BRANDDED - SCORE - REACH - SCOPE - RANGE
 
-It is a social media application that will allow you to control your online presence. It will measure your influence and give you a unified view of all your social media accounts. Presence, reach, interaction of the publications, make a ranking of punctuation compared to your friends on social networks
-
 # Developers: 
 
 Jesús Santana
@@ -17,7 +15,7 @@ https://
 
 ## Description
 
-An app where users create Escape room sessions.
+It is a social media application that will allow you to control your online presence. It will measure your influence and give you a unified view of all your social media accounts. Presence, reach, interaction of the publications, make a ranking of punctuation compared to your friends on social networks
  
 ## User Stories
 
