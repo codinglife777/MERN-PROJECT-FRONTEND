@@ -122,14 +122,12 @@ Event model
 - time: 
 ```
 ``` 
-## Wireframe
+
+### Wireframe
 
 - [Wireframe Link](https://excalidraw.com/#json=5158956179652608,ObcsWHSgXnAHjF1Jiy8QRw)
 
-## Links
-
-
-### Git
+### GitHub Reapository
 
 The url to your repository and to your deployed project
 
@@ -137,12 +135,12 @@ The url to your repository and to your deployed project
 
 - [Repository Link Backend] (https://github.com/jesussantana/MERN-PROJECT-BACKEND)
 
+### Agile Board
 
-- [Deploy Link] ('')
-
+- [Trello Link]()
 
 ### Slides
 
 The url to your presentation slides
 
-- [Slides Link](http://slides.com)
+[Slides Link]()
