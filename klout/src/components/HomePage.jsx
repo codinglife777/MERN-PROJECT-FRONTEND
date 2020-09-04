@@ -2,8 +2,10 @@ import React, { Component } from "react";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Link from "@material-ui/core/Link";
 import Container from "@material-ui/core/Container";
-import { Button } from "@material-ui/core";
+import { Box, Button } from "@material-ui/core";
 import Grid from "@material-ui/core/Grid";
+import Logo from "./Logo";
+import Copyright from "./Copyright";
 
 export default class HomePage extends Component {
   state = {
@@ -42,35 +44,42 @@ export default class HomePage extends Component {
 
   render() {
     const { authenticated } = this.state;
+
     return (
+      
       <Container component="main" maxWidth="xs">
+      <br />
+          <br /><br />
+          
         <CssBaseline />
-        <div className="paper">
-        <br/><br/>
-          <img className="center" src={process.env.PUBLIC_URL + "/klout.png"} />
-          <br/>
-          <h2>Measure your Influence</h2>
-          <br/><br/>
-          <Link to="/homeresume">
+        <Grid container direction="column" justify="center" alignItems="center">
+          <Logo/>
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <Link to="/SignUp">
             <Button
               type="submit"
               fullWidth
               variant="contained"
-              color="primary"
-              className="paper"
+              color="secondary"
+              className=""
             >
               Next Step
             </Button>
-            <br/><br/>
           </Link>
-          <Grid container className="paper">
-            <Grid item>
-              <Link href="/SignIn" variant="body2">
-                {"Already have an account?  here"}
-              </Link>
-            </Grid>
-          </Grid>
-        </div>
+          <br />
+          <br />
+          <Link href="/SignIn" variant="body2">
+            {"Already have an account?  here"}
+          </Link>
+        </Grid>
+        <br /><br />
+        <Box mt={0}>
+        <Copyright />
+      </Box>
       </Container>
     );
   }

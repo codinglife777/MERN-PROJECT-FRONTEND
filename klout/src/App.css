@@ -70,7 +70,10 @@ a:link, a:visited, a:active {
 }
 .paper{
   margin-top: 100px;
+  margin-left: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
+
