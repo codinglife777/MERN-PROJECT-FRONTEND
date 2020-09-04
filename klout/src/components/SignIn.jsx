@@ -55,7 +55,7 @@ export default function SignIn() {
             id="email"
             label="Email Address"
             name="email"
-            autoComplete="email"
+            autoComplete=""
             autoFocus
           />
           <TextField
@@ -67,13 +67,15 @@ export default function SignIn() {
             label="Password"
             type="password"
             id="password"
-            autoComplete="current-password"
+            autoComplete=""
           />
           <FormControlLabel
             control={<Checkbox value="remember" color="primary" />}
             label="Remember me"
           />
-          <Link to="/HomeResume">
+          <br />
+       
+          <Link href="/HomeResume">
             <Button
               type="submit"
               fullWidth
@@ -83,9 +85,11 @@ export default function SignIn() {
             >
               Sign In
             </Button>
-          </Link>
-
+            </Link>
+            <Link href="/HomeResume"> Sign In </Link>
+          
           <Grid container>
+         
             <Grid item xs>
               <Link href="/" variant="body2">
                 {"Return to Home"}

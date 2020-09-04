@@ -46,20 +46,20 @@ export default class HomePage extends Component {
     const { authenticated } = this.state;
 
     return (
-      
       <Container component="main" maxWidth="xs">
-      <br />
-          <br /><br />
-          
+        <br />
+        <br />
+        <br />
+
         <CssBaseline />
         <Grid container direction="column" justify="center" alignItems="center">
-          <Logo/>
+          <Logo />
           <br />
           <br />
           <br />
           <br />
           <br />
-          <Link to="/SignUp">
+          <Link href="/SignUp">
             <Button
               type="submit"
               fullWidth
@@ -70,16 +70,18 @@ export default class HomePage extends Component {
               Next Step
             </Button>
           </Link>
+          
           <br />
           <br />
           <Link href="/SignIn" variant="body2">
             {"Already have an account?  here"}
           </Link>
         </Grid>
-        <br /><br />
+        <br />
+        <br />
         <Box mt={0}>
-        <Copyright />
-      </Box>
+          <Copyright />
+        </Box>
       </Container>
     );
   }

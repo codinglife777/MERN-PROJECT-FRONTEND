@@ -33,6 +33,15 @@ const useStyles = makeStyles((theme) => ({
     color: "#fff",
     backgroundColor: green[500],
   },
+  black: {
+    color: "#fff",
+    backgroundColor: 'black',
+  },
+  blackText: {
+    color: 'black',
+
+    fontSize: "x-large",
+  },
 }));
 
 export default function HomeResume() {
@@ -43,6 +52,11 @@ export default function HomeResume() {
 
       <Grid container direction="column" justify="center" alignItems="center">
         <br />
+        <br />
+        <Grid item className={classes.blackText}>
+          RESUME
+        </Grid>
+
         <br />
         <Grid container>
           <Grid item xs >
