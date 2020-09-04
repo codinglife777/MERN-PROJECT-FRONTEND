@@ -2,11 +2,16 @@ import React from "react";
 import { Avatar, Box, Container, CssBaseline, Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { green, blue } from "@material-ui/core/colors";
-import ArrowUpwardIcon from "@material-ui/icons/ArrowUpward";
 import FaceIcon from "@material-ui/icons/Face";
+import ArrowUpwardIcon from "@material-ui/icons/ArrowUpward";
 import Points from "./Points";
 import Navigation from "./Navigation";
 import Copyright from "./Copyright";
+import { Link } from "react-router-dom";
+
+
+
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -47,7 +52,7 @@ const useStyles = makeStyles((theme) => ({
 export default function HomeResume() {
   const classes = useStyles();
   return (
-    <Container component="main" maxWidth="xs">
+    <Container  component="main" maxWidth="xs">
       <CssBaseline />
 
       <Grid container direction="column" justify="center" alignItems="center">
@@ -80,7 +85,9 @@ export default function HomeResume() {
         </Grid>
         <br />
         <br />
+       
         <Points />
+        
         <br />
         <br />
         <Grid container>

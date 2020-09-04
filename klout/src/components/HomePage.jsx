@@ -67,10 +67,10 @@ export default class HomePage extends Component {
               color="secondary"
               className=""
             >
-              Next Step
+              Start
             </Button>
           </Link>
-          
+
           <br />
           <br />
           <Link href="/SignIn" variant="body2">

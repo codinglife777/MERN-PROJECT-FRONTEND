@@ -1,11 +1,12 @@
 import React from "react";
 import { Avatar, Box, Container, CssBaseline, Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import { green, blue, pink, red, purple} from "@material-ui/core/colors";
-import FacebookIcon from '@material-ui/icons/Facebook';
-import InstagramIcon from '@material-ui/icons/Instagram';
-import YouTubeIcon from '@material-ui/icons/YouTube';
-import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import { green, blue, pink, red, purple } from "@material-ui/core/colors";
+import FaceIcon from "@material-ui/icons/Face";
+import FacebookIcon from "@material-ui/icons/Facebook";
+import InstagramIcon from "@material-ui/icons/Instagram";
+import YouTubeIcon from "@material-ui/icons/YouTube";
+import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import Points from "./Points";
 import Navigation from "./Navigation";
 import Copyright from "./Copyright";
@@ -36,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
 
     fontSize: "x-large",
   },
- 
+
   greenText: {
     color: green[500],
 
@@ -66,13 +67,13 @@ const useStyles = makeStyles((theme) => ({
   },
   black: {
     color: "#fff",
-    backgroundColor: 'black',
+    backgroundColor: "black",
   },
   blackText: {
-    color: 'black',
+    color: "black",
 
     fontSize: "x-large",
-  }
+  },
 }));
 
 function SocialProfile() {
@@ -92,11 +93,15 @@ function SocialProfile() {
         <br />
         <Grid container>
           <Grid item xs className={classes.blueText}>
-            <Avatar className={classes.blue}><FacebookIcon /></Avatar>
+            <Avatar className={classes.blue}>
+              <FacebookIcon />
+            </Avatar>
             30%
           </Grid>
           <Grid item className={classes.purpleText}>
-          <Avatar className={classes.purple}><InstagramIcon /></Avatar>
+            <Avatar className={classes.purple}>
+              <InstagramIcon />
+            </Avatar>
             18%
           </Grid>
         </Grid>
@@ -107,17 +112,21 @@ function SocialProfile() {
         <br />
         <Grid container>
           <Grid item xs className={classes.redText}>
-          <Avatar className={classes.red}><YouTubeIcon /></Avatar>
+            <Avatar className={classes.red}>
+              <YouTubeIcon />
+            </Avatar>
             45%
           </Grid>
           <Grid item className={classes.blueText}>
-          <Avatar className={classes.blue}><LinkedInIcon /></Avatar>
+            <Avatar className={classes.blue}>
+              <LinkedInIcon />
+            </Avatar>
             25%
           </Grid>
         </Grid>
         <Grid item className={classes.greenText}>
-        <Avatar className={classes.green}>+</Avatar>
-        66%
+          <Avatar className={classes.green}>+</Avatar>
+          66%
         </Grid>
         <hr />
         <br />
@@ -127,16 +136,22 @@ function SocialProfile() {
         <br />
         <Grid container>
           <Grid item xs>
-          <Avatar className={classes.blue}></Avatar>
+            <Avatar className={classes.blue}>
+              <FaceIcon />
+            </Avatar>
           </Grid>
           <Grid item xs>
-          <Avatar className={classes.pink}></Avatar>
+            <Avatar className={classes.pink}>
+              <FaceIcon />
+            </Avatar>
           </Grid>
           <Grid item>
-          <Avatar className={classes.purple}></Avatar>
+            <Avatar className={classes.purple}>
+              <FaceIcon />
+            </Avatar>
           </Grid>
         </Grid>
-        
+
         <Grid container>
           <Grid item xs>
             <h1>52%</h1>
@@ -160,11 +175,11 @@ function SocialProfile() {
           </Grid>
         </Grid>
       </Grid>
-      
+
       <br />
       <br />
       <br />
-     
+
       <Navigation />
       <br />
       <br />
