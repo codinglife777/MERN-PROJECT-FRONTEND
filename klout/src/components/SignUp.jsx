@@ -92,7 +92,7 @@ export default function SignIn() {
           >
             Sign Up
           </Button>
-          <Link href="/HomeResume"> Sign Up </Link>
+          <Link href="/AddNetworks"> Sign Up </Link>
           <Grid container>
             <Grid item xs>
               <Link href="/" variant="body2">
