@@ -1,19 +1,12 @@
-import { Container, Grid, CssBaseline, Box, Avatar } from "@material-ui/core";
 import React from "react";
-import {
-  FacebookLoginButton,
-  GoogleLoginButton,
-  TwitterLoginButton,
-  InstagramLoginButton,
-  LinkedInLoginButton,
-} from "react-social-login-buttons";
-import AccountCircleIcon from "@material-ui/icons/AccountCircle";
+import { Avatar, Box, Container, CssBaseline, Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { green, blue, pink, red, purple } from "@material-ui/core/colors";
-import Logo1 from "./Logo1";
+import CardProfile from "./CardProfile";
 import Navigation from "./Navigation";
 import Copyright from "./Copyright";
-import { Link } from "react-router-dom";
+import Logo from "./Logo";
+import Logo1 from "./Logo1";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -79,50 +72,27 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function AddNetworks() {
+function Profile() {
   const classes = useStyles();
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />
+
       <Grid container direction="column" justify="center" alignItems="center">
-        <br />
         <Logo1 />
         <br />
         <br />
-        <Link to="/profile">
-          <Avatar className={classes.purple}>
-            <AccountCircleIcon />
-          </Avatar>
-        </Link>
-        <br />
-        <br />
+
         <Grid item className={classes.blackText}>
-          Add Your Networks
-          <br />
-          <br />
-          <Link to="/homeresume">
-            <FacebookLoginButton>
-              <span>Add Facebook</span>
-            </FacebookLoginButton>
-          </Link>
-          <TwitterLoginButton onClick={() => alert("Hello")}>
-            <span>Add Twitter</span>
-          </TwitterLoginButton>
-          <InstagramLoginButton onClick={() => alert("Hello")}>
-            <span>Add Instagram</span>
-          </InstagramLoginButton>
-          <LinkedInLoginButton onClick={() => alert("Hello")}>
-            <span>Add Linkedin</span>
-          </LinkedInLoginButton>
-          <GoogleLoginButton onClick={() => alert("Hello")}>
-            <span>Add Google</span>
-          </GoogleLoginButton>
+          PROFILE
         </Grid>
+        <br />
+        <CardProfile />
       </Grid>
       <br />
       <br />
       <br />
-      <br />
+
       <Box mb={0}>
         <Navigation />
         <br />
@@ -132,4 +102,4 @@ function AddNetworks() {
   );
 }
 
-export default AddNetworks;
+export default Profile;
