@@ -53,7 +53,7 @@ const useStyles = makeStyles((theme) => ({
   purpleText: {
     color: purple[500],
 
-    fontSize: "x-large",
+    fontSize: "medium",
   },
 }));
 
@@ -107,26 +107,26 @@ export default function HomeResume() {
         <br />
 
         <br />
-        <Grid container className={classes.purpleText}>
-          <Grid item xs>
-            <h1>25k</h1>
+        <Grid container >
+          <Grid item xs className={classes.greenText}>
+            <h2>25k</h2>
           </Grid>
-          <Grid item xs>
-            <h1>1.0k</h1>
+          <Grid item xs className={classes.blueText}>
+            <h2>1.0k</h2>
           </Grid>
-          <Grid item>
-            <h1>25%</h1>
+          <Grid item className={classes.purpleText}>
+            <h2>25%</h2>
           </Grid>
         </Grid>
-        <Grid container className={classes.purpleText}>
-          <Grid item xs>
-            <h1>Follows</h1>
+        <Grid container >
+          <Grid item xs className={classes.greenText}>
+            <h2>Follows</h2>
           </Grid>
-          <Grid item xs>
-            <h1>Likes</h1>
+          <Grid item xs className={classes.blueText}>
+            <h2>Likes</h2>
           </Grid>
-          <Grid item>
-            <h1>Rate</h1>
+          <Grid item className={classes.purpleText}>
+            <h2>Rate</h2>
           </Grid>
         </Grid>
       </Grid>
