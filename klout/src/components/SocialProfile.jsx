@@ -123,18 +123,18 @@ function SocialProfile() {
             <Avatar className={classes.red}>
               <YouTubeIcon />
             </Avatar>
-            45%
+            25%
           </Grid>
           <Grid item className={classes.blueText}>
             <Avatar className={classes.blue}>
               <LinkedInIcon />
             </Avatar>
-            25%
+            27%
           </Grid>
         </Grid>
         <Grid item className={classes.greenText}>
           <Avatar className={classes.green}>+</Avatar>
-          66%
+          4.5%
         </Grid>
         <br />
         <br />

@@ -8,7 +8,6 @@ function CardProfile() {
           <div class="col-md-8">
             <div class="card shadow mb-4">
               <div class="card-header bg-gradient-primary">
-                
                 <p class="card-category text-center text-white">
                   Complete your profile
                 </p>
@@ -104,10 +103,8 @@ function CardProfile() {
                       </div>
                     </div>
                   </div>
-                  
-                  <div class="row">
 
-                    
+                  <div class="row">
                     <div class="col-md-12">
                       <button type="submit" class="btn btn-primary pull-right">
                         Update Profile
@@ -115,9 +112,7 @@ function CardProfile() {
                       <div class="clearfix"></div>
 
                       <hr />
-                      <p class="btn btn-google btn-user btn-block">
-                     
-                      </p>
+                      <p class="btn btn-google btn-user btn-block"></p>
                     </div>
                   </div>
                 </form>
