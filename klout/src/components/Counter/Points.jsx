@@ -2,6 +2,7 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Avatar from "@material-ui/core/Avatar";
 import { pink } from "@material-ui/core/colors";
+import CountUp from "react-countup";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -30,7 +31,13 @@ export default function Points() {
   return (
     <div className={classes.root}>
       <Avatar alt="Remy Sharp" className={classes.large}>
-        89
+        <CountUp start={0} end={89} delay={0}>
+          {({ countUpRef }) => (
+            <div>
+              <span ref={countUpRef} />
+            </div>
+          )}
+        </CountUp>
       </Avatar>
     </div>
   );
