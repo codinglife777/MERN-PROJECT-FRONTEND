@@ -21,6 +21,7 @@ export const AppRouter = () => {
           <Route exact path="/socialprofile" component={SocialProfile} />
           <Route exact path="/profile" component={Profile} />
         </Switch>
+        
       </div>
     </Router>
   );

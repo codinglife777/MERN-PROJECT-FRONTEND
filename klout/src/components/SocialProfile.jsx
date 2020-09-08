@@ -8,11 +8,16 @@ import InstagramIcon from "@material-ui/icons/Instagram";
 import YouTubeIcon from "@material-ui/icons/YouTube";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
-import Points from "./Points";
+import Points from "./Counter/Points";
 import Navigation from "./Navigation";
 import Copyright from "./Copyright";
 import { Link } from "react-router-dom";
 import Logo1 from "./Logo1";
+import Increase from "./Counter/Increase";
+import FacebookCount from "./Counter/FacebokCount";
+import InstagramCount from "./Counter/InstagramCount";
+import YoutubeCount from "./Counter/YoutubeCount";
+import LinkedinCount from "./Counter/LinkedinCount";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -106,13 +111,13 @@ function SocialProfile() {
             <Avatar className={classes.blue}>
               <FacebookIcon />
             </Avatar>
-            30%
+            <FacebookCount/>
           </Grid>
           <Grid item className={classes.purpleText}>
             <Avatar className={classes.purple}>
               <InstagramIcon />
             </Avatar>
-            18%
+            <InstagramCount/>
           </Grid>
         </Grid>
 
@@ -123,18 +128,18 @@ function SocialProfile() {
             <Avatar className={classes.red}>
               <YouTubeIcon />
             </Avatar>
-            25%
+            <YoutubeCount />
           </Grid>
           <Grid item className={classes.blueText}>
             <Avatar className={classes.blue}>
               <LinkedInIcon />
             </Avatar>
-            27%
+            <LinkedinCount />
           </Grid>
         </Grid>
-        <Grid item className={classes.greenText}>
+        <Grid item>
           <Avatar className={classes.green}>+</Avatar>
-          4.5%
+          <Increase/>
         </Grid>
         <br />
         <br />

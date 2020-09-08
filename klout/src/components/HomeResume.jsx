@@ -1,16 +1,19 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Avatar, Box, Container, CssBaseline, Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import { green, blue, yellow, purple } from "@material-ui/core/colors";
-import FaceIcon from "@material-ui/icons/Face";
+import { green, blue, purple } from "@material-ui/core/colors";
 import ArrowUpwardIcon from "@material-ui/icons/ArrowUpward";
-import Points from "./Points";
+import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import Navigation from "./Navigation";
 import Copyright from "./Copyright";
-import { Link } from "react-router-dom";
-import SettingsIcon from "@material-ui/icons/Settings";
-import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import Logo1 from "./Logo1";
+import Points from "./Counter/Points";
+import Follows from "./Counter/Follows";
+import Likes from "./Counter/Likes";
+import Rate from "./Counter/Rate";
+import Increase from "./Counter/Increase";
+import CountUp, { useCountUp } from 'react-countup';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -56,16 +59,20 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "medium",
   },
 }));
+const SimpleHook = () => {
+  const { countUp } = useCountUp({ end: 89 });}
+
 
 export default function HomeResume() {
   const classes = useStyles();
+  
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />
 
       <Grid container direction="column" justify="center" alignItems="center">
         <br />
-        <Logo1/>
+        <Logo1 />
         <br />
         <Grid item xs className={classes.blackText}>
           RESUME
@@ -89,10 +96,9 @@ export default function HomeResume() {
         </Grid>
         <br />
         <br />
-        <Grid container>
-          <Grid item xs className={classes.greenText}>
-            4.5
-          </Grid>
+        <Grid container justify="center" alignItems="center">
+          {CountUp}
+          &nbsp;
           <Grid item>
             <Avatar className={classes.green}>
               <ArrowUpwardIcon />
@@ -107,18 +113,24 @@ export default function HomeResume() {
         <br />
 
         <br />
-        <Grid container >
+        <Grid container>
           <Grid item xs className={classes.greenText}>
-            <h2>25k</h2>
+            <h2>
+              <Follows />
+            </h2>
           </Grid>
           <Grid item xs className={classes.blueText}>
-            <h2>1.0k</h2>
+            <h2>
+              <Likes />
+            </h2>
           </Grid>
           <Grid item className={classes.purpleText}>
-            <h2>25%</h2>
+            <h2>
+              <Rate />
+            </h2>
           </Grid>
         </Grid>
-        <Grid container >
+        <Grid container>
           <Grid item xs className={classes.greenText}>
             <h2>Follows</h2>
           </Grid>
