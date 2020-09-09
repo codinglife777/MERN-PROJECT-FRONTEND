@@ -4,8 +4,8 @@ import Link from "@material-ui/core/Link";
 import Container from "@material-ui/core/Container";
 import { Box, Button } from "@material-ui/core";
 import Grid from "@material-ui/core/Grid";
-import Logo from "./Logo";
-import Copyright from "./Copyright";
+import Logo from "./Design/Logo";
+import Copyright from "./Design/Copyright";
 
 export default class HomePage extends Component {
   state = {
@@ -14,8 +14,8 @@ export default class HomePage extends Component {
     authenticated: false,
   };
 
-  componentDidMount() {
-    fetch("http://localhost:4000/auth/login/success", {
+  /*componentDidMount() {
+    fetch("http://localhost:3000/api/auth/login", {
       method: "GET",
       credentials: "include",
       headers: {
@@ -39,11 +39,11 @@ export default class HomePage extends Component {
           authenticated: false,
           error: "Failed to authenticate user",
         });
-      });
-  }
+      });*/
+  
 
   render() {
-    const { authenticated } = this.state;
+    
 
     return (
       <Container component="main" maxWidth="xs">
@@ -86,7 +86,5 @@ export default class HomePage extends Component {
     );
   }
 
-  _handleNotAuthenticated = () => {
-    this.setState({ authenticated: false });
-  };
+  
 }

@@ -5,9 +5,9 @@ import { makeStyles } from "@material-ui/core/styles";
 import { green, blue, purple } from "@material-ui/core/colors";
 import ArrowUpwardIcon from "@material-ui/icons/ArrowUpward";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
-import Navigation from "./Navigation";
-import Copyright from "./Copyright";
-import Logo1 from "./Logo1";
+import Navigation from "./Design/Navigation";
+import Copyright from "./Design/Copyright";
+import Logo1 from "./Design/Logo1";
 import Points from "./Counter/Points";
 import Follows from "./Counter/Follows";
 import Likes from "./Counter/Likes";
@@ -56,7 +56,7 @@ const useStyles = makeStyles((theme) => ({
   purpleText: {
     color: purple[500],
 
-    fontSize: "medium",
+    fontSize: "x-large",
   },
 }));
 const SimpleHook = () => {
@@ -97,7 +97,7 @@ export default function HomeResume() {
         <br />
         <br />
         <Grid container justify="center" alignItems="center">
-          {CountUp}
+          <Increase/>
           &nbsp;
           <Grid item>
             <Avatar className={classes.green}>
