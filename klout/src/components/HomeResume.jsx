@@ -13,7 +13,7 @@ import Follows from "./Counter/Follows";
 import Likes from "./Counter/Likes";
 import Rate from "./Counter/Rate";
 import Increase from "./Counter/Increase";
-import CountUp, { useCountUp } from 'react-countup';
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -59,9 +59,6 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "x-large",
   },
 }));
-const SimpleHook = () => {
-  const { countUp } = useCountUp({ end: 89 });}
-
 
 export default function HomeResume() {
   const classes = useStyles();
@@ -141,6 +138,7 @@ export default function HomeResume() {
             <h2>Rate</h2>
           </Grid>
         </Grid>
+        
       </Grid>
       <br />
       <br />

@@ -46,7 +46,7 @@ export default class HomePage extends Component {
     
 
     return (
-      <Container component="main" maxWidth="xs">
+      <Container component="main" maxWidth="xs" >
         <br />
         <br />
         <br />

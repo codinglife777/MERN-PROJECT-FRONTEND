@@ -18,6 +18,7 @@ import FacebookCount from "./Counter/FacebokCount";
 import InstagramCount from "./Counter/InstagramCount";
 import YoutubeCount from "./Counter/YoutubeCount";
 import LinkedinCount from "./Counter/LinkedinCount";
+import CountUp from "react-countup";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -111,13 +112,13 @@ function SocialProfile() {
             <Avatar className={classes.blue}>
               <FacebookIcon />
             </Avatar>
-            <FacebookCount/>
+            <FacebookCount />
           </Grid>
           <Grid item className={classes.purpleText}>
             <Avatar className={classes.purple}>
               <InstagramIcon />
             </Avatar>
-            <InstagramCount/>
+            <InstagramCount />
           </Grid>
         </Grid>
 
@@ -139,7 +140,7 @@ function SocialProfile() {
         </Grid>
         <Grid item>
           <Avatar className={classes.green}>+</Avatar>
-          <Increase/>
+          <Increase />
         </Grid>
         <br />
         <br />
@@ -168,13 +169,43 @@ function SocialProfile() {
 
         <Grid container>
           <Grid item xs className={classes.blueText}>
-            <h2>52%</h2>
+            <h2>
+              <div className={classes.root}>
+                <CountUp start={0} end={52} delay={0}>
+                  {({ countUpRef }) => (
+                    <div>
+                      <span ref={countUpRef} />%
+                    </div>
+                  )}
+                </CountUp>
+              </div>
+            </h2>
           </Grid>
           <Grid item xs className={classes.redText}>
-            <h2>42%</h2>
+            <h2>
+              <div className={classes.root}>
+                <CountUp start={0} end={44} delay={0}>
+                  {({ countUpRef }) => (
+                    <div>
+                      <span ref={countUpRef} />%
+                    </div>
+                  )}
+                </CountUp>
+              </div>
+            </h2>
           </Grid>
           <Grid item className={classes.purpleText}>
-            <h2>6%</h2>
+            <h2>
+              <div className={classes.root}>
+                <CountUp start={0} end={4} delay={0}>
+                  {({ countUpRef }) => (
+                    <div>
+                      <span ref={countUpRef} />%
+                    </div>
+                  )}
+                </CountUp>
+              </div>
+            </h2>
           </Grid>
         </Grid>
         <Grid container>
