@@ -12,41 +12,38 @@ import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import Logo from "../Design/Logo";
 import Copyright from "../Design/Copyright";
-import AuthService from "./authService";
+import AuthService from "./AuthService";
+import { Input } from "@material-ui/core";
 
 
 
 export default class SignUp extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      username: "",
-      password: "",
-    };
+    this.state = { username: "", password: "" };
     this.service = new AuthService();
   }
-  handleChange = ({ target }) => {
-    const { name, value } = target;
-    this.setState((state) => ({
-      ...state,
-      [name]: value,
-    }));
-  };
-  handleSubmit = (e) => {
-    e.preventDefault();
-    const { username, password } = this.state;
+  handleFormSubmit = event => {
+    event.preventDefault();
+    const username = this.state.username;
+    const password = this.state.password;
+
     this.service
       .signup(username, password)
-      .then((response) => {
+      .then(response => {
         this.setState({
           username: "",
-          password: "",
+          password: ""
         });
         this.props.getUser(response);
-        this.props.history.push("/profile");
       })
-      .catch((error) => console.log(error));
+      .catch(error => console.log(error));
   };
+  handleChange = event => {
+    const { name, value } = event.target;
+    this.setState({ [name]: value });
+  };
+
   useStyles = makeStyles((theme) => ({
     paper: {
       marginTop: theme.spacing(8),
@@ -81,8 +78,8 @@ export default class SignUp extends Component {
             </Typography>
             <form
               className={this.useStyles.form}
-              noValidate
-              onSubmit={this.handleSubmit}
+              
+              onSubmit={this.handleFormSubmit}
             >
               <TextField
                 variant="outlined"
@@ -95,7 +92,7 @@ export default class SignUp extends Component {
                 id="username"
                 autoComplete=""
                 value={this.state.username}
-                onChange={this.handleChange}
+                onChange={e => this.handleChange(e)}
               />
               <TextField
                 variant="outlined"
@@ -108,7 +105,7 @@ export default class SignUp extends Component {
                 id="password"
                 autoComplete="current-password"
                 value={this.state.password}
-                onChange={this.handleChange}
+                onChange={e => this.handleChange(e)}
               />
 
               <FormControlLabel
@@ -120,6 +117,7 @@ export default class SignUp extends Component {
                 fullWidth
                 variant="contained"
                 color="secondary"
+                value="Signup"
                 className={this.useStyles.submit}
               >
                 Sign Up
