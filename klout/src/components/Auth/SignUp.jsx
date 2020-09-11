@@ -34,8 +34,12 @@ export default class SignUp extends Component {
           password: "",
         });
         this.props.getUser(response);
+        this.props.history.push('/Login');
       })
-      .catch((error) => console.log(error));
+      .catch((error) => 
+      
+      <p class="btn btn-google btn-user btn-block">{{error}}</p>
+      );
   };
   handleChange = (event) => {
     const { name, value } = event.target;
@@ -118,7 +122,7 @@ export default class SignUp extends Component {
               >
                 Sign Up
               </Button>
-              <Link href="/AddNetworks"> Sign Up </Link>
+              
               <Grid container>
                 <Grid item xs>
                   <Link href="/" variant="body2">
@@ -130,10 +134,12 @@ export default class SignUp extends Component {
                     {"Have an account? Sign in"}
                   </Link>
                 </Grid>
+                
               </Grid>
             </form>
           </div>
           <br />
+          
           <br />
           <Box mb={0}>
             <Copyright />

@@ -1,8 +1,8 @@
-import { Avatar, Grid, makeStyles } from "@material-ui/core";
+
 import React from "react";
 import CountUp from "react-countup";
-import ArrowUpwardIcon from "@material-ui/icons/ArrowUpward";
 import { blue, green, purple, red } from "@material-ui/core/colors";
+import { Grid, makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   root: {

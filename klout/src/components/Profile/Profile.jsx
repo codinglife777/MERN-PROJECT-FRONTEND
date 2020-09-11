@@ -3,9 +3,10 @@ import { Box, Container, CssBaseline, Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { green, blue, pink, red, purple } from "@material-ui/core/colors";
 import CardProfile from "./CardProfile";
-import Navigation from "./Design/Navigation";
-import Copyright from "./Design/Copyright";
-import Logo1 from "./Design/Logo1";
+import Navigation from "../Design/Navigation";
+import Copyright from "../Design/Copyright";
+import Logo1 from "../Design/Logo1";
+
 
 const useStyles = makeStyles((theme) => ({
   root: {

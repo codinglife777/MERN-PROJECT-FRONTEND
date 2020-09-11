@@ -52,7 +52,7 @@ justify-content: center;
 min-height: 30vh;
 padding: 50px;
 }
-a:link, a:visited, a:active {
+a:link, a:visited, a:active a:hover {
   text-decoration:none;
 }
 

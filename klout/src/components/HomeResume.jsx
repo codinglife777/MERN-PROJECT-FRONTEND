@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Avatar, Box, Container, CssBaseline, Grid } from "@material-ui/core";
+import { Box, Container, CssBaseline, Fab, Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { green, blue, purple } from "@material-ui/core/colors";
 import ArrowUpwardIcon from "@material-ui/icons/ArrowUpward";
@@ -20,6 +20,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     "& > *": {
       margin: theme.spacing(1),
+      textDecoration: "none",
     },
   },
   blue: {
@@ -64,7 +65,7 @@ export default function HomeResume() {
   const classes = useStyles();
   
   return (
-    <Container component="main" maxWidth="xs">
+    <Container component="main" maxWidth="xs" >
       <CssBaseline />
 
       <Grid container direction="column" justify="center" alignItems="center">
@@ -78,9 +79,9 @@ export default function HomeResume() {
         <br />
         <Grid item>
           <Link to="/profile">
-            <Avatar className={classes.purple}>
+            <Fab className={classes.purple}>
               <AccountCircleIcon />
-            </Avatar>
+            </Fab>
           </Link>
         </Grid>
 
@@ -97,15 +98,16 @@ export default function HomeResume() {
           <Increase/>
           &nbsp;
           <Grid item>
-            <Avatar className={classes.green}>
+            <Fab className={classes.green}>
               <ArrowUpwardIcon />
-            </Avatar>
+            </Fab>
           </Grid>
         </Grid>
         <br />
         <br />
-
+        <Link to="/SocialProfile">
         <Points />
+        </Link>
         <br />
         <br />
 

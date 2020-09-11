@@ -1,16 +1,20 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import Avatar from "@material-ui/core/Avatar";
-import { pink } from "@material-ui/core/colors";
+import { pink} from "@material-ui/core/colors";
 import CountUp from "react-countup";
+import { Fab } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
-
+    textDecoration: "none",
+    
     "& > *": {
       margin: theme.spacing(1),
     },
+    
+
+    
   },
   small: {
     width: theme.spacing(3),
@@ -19,9 +23,10 @@ const useStyles = makeStyles((theme) => ({
   large: {
     width: theme.spacing(15),
     height: theme.spacing(15),
-    fontSize: "xx-large",
+    fontSize: "80px",
     color: theme.palette.getContrastText(pink[500]),
     backgroundColor: pink[500],
+    
   },
 }));
 
@@ -30,7 +35,7 @@ export default function Points() {
 
   return (
     <div className={classes.root}>
-      <Avatar alt="Remy Sharp" className={classes.large}>
+      <Fab alt="Remy Sharp" className={classes.large}>
         <CountUp start={0} end={89} delay={0}>
           {({ countUpRef }) => (
             <div>
@@ -38,7 +43,7 @@ export default function Points() {
             </div>
           )}
         </CountUp>
-      </Avatar>
+      </Fab>
     </div>
   );
 }
