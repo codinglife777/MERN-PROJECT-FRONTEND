@@ -8,45 +8,10 @@ import Logo from "./Design/Logo";
 import Copyright from "./Design/Copyright";
 
 export default class HomePage extends Component {
-  state = {
-    user: {},
-    error: null,
-    authenticated: false,
-  };
-
-  /*componentDidMount() {
-    fetch("http://localhost:3000/api/auth/login", {
-      method: "GET",
-      credentials: "include",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Credentials": true,
-      },
-    })
-      .then((response) => {
-        if (response.status === 200) return response.json();
-        throw new Error("failed to authenticate user");
-      })
-      .then((responseJson) => {
-        this.setState({
-          authenticated: true,
-          user: responseJson.user,
-        });
-      })
-      .catch((error) => {
-        this.setState({
-          authenticated: false,
-          error: "Failed to authenticate user",
-        });
-      });*/
-  
-
+ 
   render() {
-    
-
     return (
-      <Container component="main" maxWidth="xs" >
+      <Container component="main" maxWidth="xs">
         <br />
         <br />
         <br />
@@ -73,7 +38,7 @@ export default class HomePage extends Component {
 
           <br />
           <br />
-          <Link href="/SignIn" variant="body2">
+          <Link href="/Login" variant="body2">
             {"Already have an account?  here"}
           </Link>
         </Grid>
@@ -85,6 +50,4 @@ export default class HomePage extends Component {
       </Container>
     );
   }
-
-  
 }

@@ -2,24 +2,25 @@ import React, { Component } from "react";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import TextField from "@material-ui/core/TextField";
+import Input from "@material-ui/core/Input";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
 import Link from "@material-ui/core/Link";
 import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
-import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
+import Typography from "@material-ui/core/Typography";
 import Logo from "../Design/Logo";
 import Copyright from "../Design/Copyright";
 import AuthService from "./AuthService";
-import { Input } from "@material-ui/core";
+import { Redirect } from "react-router-dom";
 
-export default class SignUp extends Component {
+export default class Login extends Component {
   constructor(props) {
     super(props);
     this.state = { username: "", password: "" };
-     this.service = new AuthService();
+    this.service = new AuthService();
   }
   handleFormSubmit = (event) => {
     event.preventDefault();
@@ -27,7 +28,7 @@ export default class SignUp extends Component {
     const password = this.state.password;
 
     this.service
-      .signup(username, password)
+      .login(username, password)
       .then((response) => {
         this.setState({
           username: "",
@@ -37,6 +38,7 @@ export default class SignUp extends Component {
       })
       .catch((error) => console.log(error));
   };
+
   handleChange = (event) => {
     const { name, value } = event.target;
     this.setState({ [name]: value });
@@ -63,15 +65,20 @@ export default class SignUp extends Component {
   }));
 
   render() {
-    return (
-      <div>
+    const { redirectToReferrer } = this.state;
+
+    if (redirectToReferrer === true) {
+      return <Redirect to="/HomeResume" />;
+    } else {
+      return (
         <Container component="main" maxWidth="xs">
           <CssBaseline />
+
           <div className={this.useStyles.paper}>
             <Logo />
 
             <Typography component="h1" variant="h5">
-              Sign up
+              Sign in
             </Typography>
             <form
               className={this.useStyles.form}
@@ -82,11 +89,11 @@ export default class SignUp extends Component {
                 margin="normal"
                 required
                 fullWidth
-                name="username"
-                label="Username"
-                type="username"
                 id="username"
+                label="Username"
+                name="username"
                 autoComplete=""
+                autoFocus
                 value={this.state.username}
                 onChange={(e) => this.handleChange(e)}
               />
@@ -99,26 +106,29 @@ export default class SignUp extends Component {
                 label="Password"
                 type="password"
                 id="password"
-                autoComplete="current-password"
+                autoComplete=""
                 value={this.state.password}
                 onChange={(e) => this.handleChange(e)}
               />
-
               <FormControlLabel
                 control={<Checkbox value="remember" color="primary" />}
                 label="Remember me"
               />
+              <br />
+
               <Button
                 type="submit"
                 fullWidth
                 variant="contained"
-                color="secondary"
-                value="Signup"
+                color="primary"
+                value="Login"
                 className={this.useStyles.submit}
               >
-                Sign Up
+                Sign In
               </Button>
-              <Link href="/AddNetworks"> Sign Up </Link>
+
+              <Link href="/HomeResume"> Sign In </Link>
+
               <Grid container>
                 <Grid item xs>
                   <Link href="/" variant="body2">
@@ -126,8 +136,8 @@ export default class SignUp extends Component {
                   </Link>
                 </Grid>
                 <Grid item>
-                  <Link href="/Login" variant="body2">
-                    {"Have an account? Sign in"}
+                  <Link href="/SignUp" variant="body2">
+                    {"Don't have an account? Sign Up"}
                   </Link>
                 </Grid>
               </Grid>
@@ -139,7 +149,7 @@ export default class SignUp extends Component {
             <Copyright />
           </Box>
         </Container>
-      </div>
-    );
+      );
+    }
   }
 }
