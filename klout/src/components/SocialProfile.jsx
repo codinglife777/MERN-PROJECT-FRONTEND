@@ -100,7 +100,7 @@ function SocialProfile() {
         </Grid>
         <br />
         <Grid item>
-          <Link to="/profile">
+          <Link to="../Profile/Profile">
             <Avatar className={classes.purple}>
               <AccountCircleIcon />
             </Avatar>

@@ -1,0 +1,33 @@
+
+input[type="file"] {
+    display: none; }
+  
+.custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    background: #499bea;
+    background: -moz-linear-gradient(left, #499bea 0%, #207ce5 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, #499bea), color-stop(100%, #207ce5));
+    background: -webkit-linear-gradient(left, #499bea 0%, #207ce5 100%);
+    background: -o-linear-gradient(left, #499bea 0%, #207ce5 100%);
+    background: -ms-linear-gradient(left, #499bea 0%, #207ce5 100%);
+    background: linear-gradient(to right, #499bea 0%, #207ce5 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#499bea', endColorstr='#207ce5', GradientType=1);
+    color: white;
+    border-radius: 5px; }
+  
+#avatarLayout {
+    width: 40px;
+    height: 40px; }
+  
+#avatarProfile {
+    width: 140px;
+    height: 140px; }
+
+@media (max-width: 370px) {
+      #avatarProfile {
+       width: 100px;
+      height: 100px; } }
+  
