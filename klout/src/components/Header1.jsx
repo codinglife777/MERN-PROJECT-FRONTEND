@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import React, { Component } from "react";
-import Signin from "./SignIn";
+import Login from "./Login";
 
 
 export default class Header extends Component {
@@ -23,7 +23,7 @@ export default class Header extends Component {
         {authenticated ? (
           <li onClick={this._handleLogoutClick}>Logout</li>
         ) : (
-          <li onClick={this._handleSignInClick}>Login</li>
+          <li onClick={this._handleClick}>Login</li>
         )}
         <li>
         
@@ -34,7 +34,7 @@ export default class Header extends Component {
     );
   }
 
-  _handleSignInClick = () => {
+  _handleClick = () => {
     // Authenticate using via passport api in the backend
     // Open Twitter login page
     window.open("http://localhost:4000/auth/twitter", "_self");

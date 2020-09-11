@@ -65,13 +65,15 @@ function CardProfile() {
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label class="bmd-label-floating">Email address</label>
+                        <label class="bmd-label-floating">
+                          username address
+                        </label>
                         <input
-                          type="email"
-                          name="email"
+                          type="username"
+                          name="username"
                           class="form-control"
-                          value="{{user.email}}"
-                          placeholder="Email"
+                          value="{{user.username}}"
+                          placeholder="username"
                         />
                       </div>
                     </div>
