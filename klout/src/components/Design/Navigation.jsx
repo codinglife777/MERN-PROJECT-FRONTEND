@@ -10,7 +10,8 @@ import { Link } from "react-router-dom";
 const useStyles = makeStyles((theme) => ({
   root: {
     "& > *": {
-      margin: theme.spacing(1.5),
+      margin: theme.spacing(2.4),
+      
     },
   },
   extendedIcon: {
@@ -30,24 +31,24 @@ export default function FloatingActionButtons() {
       justify="center"
       alignItems="center"
     >
-      <Link to="/HomeResume">
-        <Fab variant="secondary">
-          &nbsp;&nbsp;<HomeIcon className={classes.extendedIcon} />
+      <Link to="/HomeResume">&nbsp;&nbsp;&nbsp;
+        <Fab color="secondary">
+          <HomeIcon  />
         </Fab>
       </Link>
       <Link to="/SocialProfile">
-        <Fab variant="success">
-        &nbsp;&nbsp;<BarChartIcon className={classes.extendedIcon} />
+        <Fab Fab color="secondary">
+        <BarChartIcon  />
         </Fab>
       </Link>
       <Link to="/Evolution">
-        <Fab variant="alert">
-        &nbsp;&nbsp;<TimelineSharpIcon className={classes.extendedIcon} />
+        <Fab Fab color="secondary">
+       <TimelineSharpIcon  />
         </Fab>
       </Link>
       <Link to="/Ranking">
-        <Fab variant="alert">
-        &nbsp;&nbsp; <EmojiEventsSharpIcon className={classes.extendedIcon} />
+        <Fab Fab color="secondary">
+        <EmojiEventsSharpIcon  />
         </Fab>
       </Link>
     </div>

@@ -1,13 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Avatar, Box, Container, CssBaseline, Grid } from "@material-ui/core";
+import { Fab, Box, Container, CssBaseline, Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { green, blue, pink, red, purple } from "@material-ui/core/colors";
 import FaceIcon from "@material-ui/icons/Face";
 import FacebookIcon from "@material-ui/icons/Facebook";
 import InstagramIcon from "@material-ui/icons/Instagram";
-import YouTubeIcon from "@material-ui/icons/YouTube";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
+import TwitterIcon from '@material-ui/icons/Twitter';
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import Navigation from "./Design/Navigation";
 import Copyright from "./Design/Copyright";
@@ -16,11 +16,13 @@ import Points from "./Counter/Points";
 import Increase from "./Counter/Increase";
 import FacebookCount from "./Counter/FacebokCount";
 import InstagramCount from "./Counter/InstagramCount";
-import YoutubeCount from "./Counter/YoutubeCount";
 import LinkedinCount from "./Counter/LinkedinCount";
+import TwitterCount from "./Counter/TwitterCount";
+import AddIcon from '@material-ui/icons/Add';
 import CountUp from "react-countup";
 
 const useStyles = makeStyles((theme) => ({
+  
   root: {
     display: "flex",
     "& > *": {
@@ -38,10 +40,28 @@ const useStyles = makeStyles((theme) => ({
   },
   blue: {
     color: "#fff",
-    backgroundColor: blue[500],
+    backgroundColor: blue[600],
   },
   blueText: {
-    color: blue[500],
+    color: blue[600],
+
+    fontSize: "x-large",
+  },
+  blueLight: {
+    color: "#fff",
+    backgroundColor: blue[300],
+  },
+  blueLightText: {
+    color: blue[300],
+
+    fontSize: "x-large",
+  },
+  blueDark: {
+    color: "#fff",
+    backgroundColor: blue[800],
+  },
+  blueDarkText: {
+    color: blue[800],
 
     fontSize: "x-large",
   },
@@ -101,45 +121,45 @@ function SocialProfile() {
         <br />
         <Grid item>
           <Link to="../Profile/Profile">
-            <Avatar className={classes.purple}>
+            <Fab className={classes.purple}>
               <AccountCircleIcon />
-            </Avatar>
+            </Fab>
           </Link>
         </Grid>
         <br />
         <Grid container>
           <Grid item xs className={classes.blueText}>
-            <Avatar className={classes.blue}>
+            <Fab className={classes.blue}>
               <FacebookIcon />
-            </Avatar>
+            </Fab>
             <FacebookCount />
           </Grid>
           <Grid item className={classes.purpleText}>
-            <Avatar className={classes.purple}>
+            <Fab className={classes.purple}>
               <InstagramIcon />
-            </Avatar>
+            </Fab>
             <InstagramCount />
           </Grid>
         </Grid>
-
-        <Points />
-
+        <Link to="/HomeResume">
+          <Points />
+        </Link>
         <Grid container>
-          <Grid item xs className={classes.redText}>
-            <Avatar className={classes.red}>
-              <YouTubeIcon />
-            </Avatar>
-            <YoutubeCount />
+          <Grid item xs className={classes.blueLightText}>
+            <Fab className={classes.blueLight}>
+              <TwitterIcon />
+            </Fab>
+            <TwitterCount />
           </Grid>
-          <Grid item className={classes.blueText}>
-            <Avatar className={classes.blue}>
+          <Grid item className={classes.blueDarkText}>
+            <Fab className={classes.blueDark}>
               <LinkedInIcon />
-            </Avatar>
+            </Fab>
             <LinkedinCount />
           </Grid>
         </Grid>
         <Grid item>
-          <Avatar className={classes.green}>+</Avatar>
+          <Fab className={classes.green}><AddIcon/></Fab>
           <Increase />
         </Grid>
         <br />
@@ -151,19 +171,19 @@ function SocialProfile() {
         <br />
         <Grid container>
           <Grid item xs>
-            <Avatar className={classes.blue}>
+            <Fab className={classes.blue}>
               <FaceIcon />
-            </Avatar>
+            </Fab>
           </Grid>
           <Grid item xs>
-            <Avatar className={classes.pink}>
+            <Fab className={classes.pink}>
               <FaceIcon />
-            </Avatar>
+            </Fab>
           </Grid>
           <Grid item>
-            <Avatar className={classes.purple}>
+            <Fab className={classes.purple}>
               <FaceIcon />
-            </Avatar>
+            </Fab>
           </Grid>
         </Grid>
 

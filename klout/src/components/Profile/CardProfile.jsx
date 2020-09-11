@@ -66,7 +66,7 @@ export default class CardProfile extends Component {
         .put("http://localhost:3000/api/user/:id/" + "5f5a19a44e6db73942125498", this.state)
         .then((response) => {
           console.log(response);
-          //Poner un redirect a List o a Details
+          this.props.history.push('/Profile');
         })
         .catch((err) => {
           console.log(err);

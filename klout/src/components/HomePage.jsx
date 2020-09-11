@@ -6,6 +6,7 @@ import { Box, Button } from "@material-ui/core";
 import Grid from "@material-ui/core/Grid";
 import Logo from "./Design/Logo";
 import Copyright from "./Design/Copyright";
+import SocialAuth from "../SocialAuth";
 
 export default class HomePage extends Component {
  
@@ -21,6 +22,7 @@ export default class HomePage extends Component {
           <Logo />
           <br />
           <br />
+          
           <br />
           <br />
           <br />

@@ -34,6 +34,7 @@ export default class Login extends Component {
           password: "",
         });
         this.props.getUser(response);
+        this.props.history.push('/AddNetworks');
       })
       .catch((error) => console.log(error));
   };
