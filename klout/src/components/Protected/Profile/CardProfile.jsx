@@ -41,7 +41,7 @@ export default class CardProfile extends Component {
     this.getUser = () => {
       
       axios
-        .get("http://localhost:3000/api/user/:id/" + "5f5a19a44e6db73942125498")
+        .get("${process.env.REACT_APP_API_URL}/user/:id/" + "5f5a19a44e6db73942125498")
         .then(({ data }) => {
           this.setState({
             username: data.username,

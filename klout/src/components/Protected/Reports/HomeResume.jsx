@@ -5,14 +5,14 @@ import { makeStyles } from "@material-ui/core/styles";
 import { green, blue, purple } from "@material-ui/core/colors";
 import ArrowUpwardIcon from "@material-ui/icons/ArrowUpward";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
-import Navigation from "./Design/Navigation";
-import Copyright from "./Design/Copyright";
-import Logo1 from "./Design/Logo1";
-import Points from "./Counter/Points";
-import Follows from "./Counter/Follows";
-import Likes from "./Counter/Likes";
-import Rate from "./Counter/Rate";
-import Increase from "./Counter/Increase";
+import Navigation from "../../Design/Navigation";
+import Copyright from "../../Design/Copyright";
+import Logo1 from "../../Design/Logo1";
+import Points from "../Counter/Points";
+import Follows from "../Counter/Follows";
+import Likes from "../Counter/Likes";
+import Rate from "../Counter/Rate";
+import Increase from "../Counter/Increase";
 
 
 const useStyles = makeStyles((theme) => ({

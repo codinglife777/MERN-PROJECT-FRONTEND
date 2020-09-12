@@ -10,8 +10,8 @@ import Box from "@material-ui/core/Box";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
-import Logo from "../Design/Logo";
-import Copyright from "../Design/Copyright";
+import Logo from "../../Design/Logo";
+import Copyright from "../../Design/Copyright";
 import AuthService from "./AuthService";
 import { Input } from "@material-ui/core";
 
@@ -122,7 +122,7 @@ export default class SignUp extends Component {
               >
                 Sign Up
               </Button>
-              
+              <br/><br/>
               <Grid container>
                 <Grid item xs>
                   <Link href="/" variant="body2">
