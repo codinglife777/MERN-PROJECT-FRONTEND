@@ -6,7 +6,7 @@ import CardProfile from "./CardProfile";
 import Navigation from "../../Design/Navigation";
 import Copyright from "../../Design/Copyright";
 import Logo1 from "../../Design/Logo1";
-
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -88,9 +88,11 @@ function Profile() {
         </Grid>
         <br />
         <CardProfile />
+        
       </Grid>
       <br />
       <br />
+
       <br />
 
       <Box mb={0}>

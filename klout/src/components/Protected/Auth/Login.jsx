@@ -11,9 +11,11 @@ import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import Logo from "../../Design/Logo";
+import Slogan from "../../Design/Slogan";
 import Copyright from "../../Design/Copyright";
 import AuthService from "./AuthService";
 import { Redirect } from "react-router-dom";
+
 
 export default class Login extends Component {
   constructor(props) {
@@ -34,7 +36,7 @@ export default class Login extends Component {
           password: "",
         });
         this.props.getUser(response);
-        this.props.history.push('/AddNetworks');
+        this.props.history.push("/AddNetworks");
       })
       .catch((error) => console.log(error));
   };
@@ -45,16 +47,6 @@ export default class Login extends Component {
   };
 
   useStyles = makeStyles((theme) => ({
-    paper: {
-      marginTop: theme.spacing(8),
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-    },
-    avatar: {
-      margin: theme.spacing(1),
-      backgroundColor: theme.palette.primary.main,
-    },
     form: {
       width: "100%", // Fix IE 11 issue.
       marginTop: theme.spacing(1),
@@ -73,9 +65,14 @@ export default class Login extends Component {
       return (
         <Container component="main" maxWidth="xs">
           <CssBaseline />
-
-          <div className={this.useStyles.paper}>
+          <Grid
+            container
+            direction="column"
+            justify="center"
+            alignItems="center"
+          >
             <Logo />
+            <Slogan />
 
             <Typography component="h1" variant="h5">
               Sign in
@@ -84,6 +81,7 @@ export default class Login extends Component {
               className={this.useStyles.form}
               onSubmit={this.handleFormSubmit}
             >
+            
               <TextField
                 variant="outlined"
                 margin="normal"
@@ -126,9 +124,8 @@ export default class Login extends Component {
               >
                 Sign In
               </Button>
-
-            
-
+              <br />
+              <br />
               <Grid container>
                 <Grid item xs>
                   <Link href="/" variant="body2">
@@ -142,7 +139,7 @@ export default class Login extends Component {
                 </Grid>
               </Grid>
             </form>
-          </div>
+          </Grid>
           <br />
           <br />
           <Box mb={0}>

@@ -1,16 +1,11 @@
 import React, { Component } from "react";
-import { Button, makeStyles, TextField } from "@material-ui/core";
+import { Button, Grid, makeStyles, TextField } from "@material-ui/core";
 import CloudUploadIcon from "@material-ui/icons/CloudUpload";
 import axios from "axios";
 import "./profile.css";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
-  paper: {
-    marginTop: theme.spacing(8),
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-  },
   avatar: {
     margin: theme.spacing(1),
     backgroundColor: theme.palette.primary.main,
@@ -30,18 +25,15 @@ export default class CardProfile extends Component {
     this.state = {
       username: this.props.username,
       password: this.props.password,
-      _id:this.props._id
-      
-     
+      _id: this.props._id,
     };
-    
+
     this.componentDidMount = () => {
       this.getUser();
     };
     this.getUser = () => {
-      
       axios
-        .get("${process.env.REACT_APP_API_URL}/user/:id/" + "5f5a19a44e6db73942125498")
+        .get("http://localhost:3000/api/user/:id/" + "5f5a19a44e6db73942125498")
         .then(({ data }) => {
           this.setState({
             username: data.username,
@@ -61,12 +53,15 @@ export default class CardProfile extends Component {
     };
     this.handleSave = (e) => {
       e.preventDefault();
-     
+
       axios
-        .put("http://localhost:3000/api/user/:id/" + "5f5a19a44e6db73942125498", this.state)
+        .put(
+          "http://localhost:3000/api/user/" + "5f5a19a44e6db73942125498",
+          this.state
+        )
         .then((response) => {
           console.log(response);
-          this.props.history.push('/Profile');
+          this.props.history.push("/Profile");
         })
         .catch((err) => {
           console.log(err);
@@ -89,7 +84,8 @@ export default class CardProfile extends Component {
                     <img
                       id="avatarProfile"
                       class="img-fluid img-profile rounded-circle float-center"
-                      src={this.state.image} />
+                      src={this.state.image}
+                    />
                   </a>
                 </div>
               </div>
@@ -119,26 +115,39 @@ export default class CardProfile extends Component {
                   <div class="row">
                     <div class="col-md-12">
                       <div class="form-group">
-                        <label class="bmd-label-floating">Username</label>
+                      
                         <TextField
                           type="text"
+                          variant="outlined"
+                          margin="normal"
+                          required
+                          fullWidth
+                          id="username"
+                          label="Username"
                           name="username"
-                          class="form-control"
+                          autoComplete=""
+                          autoFocus
                           value={this.state.username}
                           onChange={this.handleChange}
-                          placeholder="Username" />
-                        
-                        
+                          placeholder="Username"
+                        />
                       </div>
                     </div>
 
                     <div class="col-md-12">
                       <div class="form-group">
-                        <label class="bmd-label-floating">Password</label>
+                       
                         <TextField
                           type="password"
+                          variant="outlined"
+                          
+                          margin="normal"
+                          required
+                          fullWidth
+                          id="password"
+                          label="Password"
                           name="password"
-                          class="form-control"
+                    
                           value={this.state.password}
                           onChange={this.handleChange}
                           placeholder="password"
@@ -147,10 +156,12 @@ export default class CardProfile extends Component {
                       </div>
                     </div>
                   </div>
-
+                  <br />
+                  <div class="clearfix"></div>
+                  <div class="clearfix"></div>
                   <div class="row">
                     <div class="col-md-12">
-                      <Button type="submit" class="btn btn-danger pull-right">
+                      <Button type="submit" class="btn btn-danger float-right">
                         Update Profile
                       </Button>
                       <div class="clearfix"></div>
@@ -158,6 +169,13 @@ export default class CardProfile extends Component {
                   </div>
                 </form>
               </div>
+            </div>
+            <div class="col-md-12">
+              <Link href="/AddNetworks" variant="body2">
+                <Button class="btn btn-primary float-right">
+                  Edit Networks
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

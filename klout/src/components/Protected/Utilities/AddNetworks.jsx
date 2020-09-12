@@ -1,4 +1,11 @@
-import { Container, Grid, CssBaseline, Box, Avatar } from "@material-ui/core";
+import {
+  Container,
+  Grid,
+  CssBaseline,
+  Box,
+  Avatar,
+  Fab,
+} from "@material-ui/core";
 import { Link } from "react-router-dom";
 import React from "react";
 import {
@@ -14,7 +21,6 @@ import { green, blue, pink, red, purple } from "@material-ui/core/colors";
 import Logo1 from "../../Design/Logo1";
 import Navigation from "../../Design/Navigation";
 import Copyright from "../../Design/Copyright";
-
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -91,9 +97,9 @@ function AddNetworks() {
         <br />
         <br />
         <Link to="/profile">
-          <Avatar className={classes.purple}>
+          <Fab className={classes.purple}>
             <AccountCircleIcon />
-          </Avatar>
+          </Fab>
         </Link>
         <br />
         <br />
@@ -106,18 +112,15 @@ function AddNetworks() {
               <span>Add Facebook</span>
             </FacebookLoginButton>
           </Link>
-          <TwitterLoginButton onClick={() => alert("Hello")}>
+          <TwitterLoginButton>
             <span>Add Twitter</span>
           </TwitterLoginButton>
-          <InstagramLoginButton onClick={() => alert("Hello")}>
+          <InstagramLoginButton>
             <span>Add Instagram</span>
           </InstagramLoginButton>
-          <LinkedInLoginButton onClick={() => alert("Hello")}>
+          <LinkedInLoginButton>
             <span>Add Linkedin</span>
           </LinkedInLoginButton>
-          <GoogleLoginButton onClick={() => alert("Hello")}>
-            <span>Add Google</span>
-          </GoogleLoginButton>
         </Grid>
       </Grid>
       <br />
