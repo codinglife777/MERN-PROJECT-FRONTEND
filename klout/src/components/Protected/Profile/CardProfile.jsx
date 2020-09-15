@@ -78,14 +78,13 @@ export default class CardProfile extends Component {
   render() {
     return (
       <div class="container-fluid">
-        <div class="row justify-content-center">
+        <div class="rc justify-content-center">
           <div class="col-md-12">
-            <div class="card shadow mb-4">
-              <div class="card-header bg-gradient-primary">
-                <p class="card-category text-center text-white">
-                  Complete your profile
-                </p>
-                <h4>{this.state._id}</h4>
+            <div >
+              <div class="card-header ">
+              
+                <h8>{this.state._id}</h8>
+                <h4>{this.state.username}</h4>
                 <div class="card-avatar">
                
                     <img
@@ -98,13 +97,7 @@ export default class CardProfile extends Component {
                 </div>
               </div>
               <div class="card-body">
-                <form
-                  onSubmit={this.handleSave}
-                  className={useStyles.form}
-                  
-                  method="POST"
-                  enctype="multipart/form-data"
-                >
+                
                   <div class="row">
                     <div class="col-md-12">
                       <div class="form-group">
@@ -120,6 +113,13 @@ export default class CardProfile extends Component {
                       </div>
                     </div>
                   </div>
+                  <form
+                  onSubmit={this.handleSave}
+                  className={useStyles.form}
+                  
+                  method="POST"
+                  enctype="multipart/form-data"
+                >
                   <div class="row">
                     <div class="col-md-12">
                       <div class="form-group">
@@ -175,7 +175,7 @@ export default class CardProfile extends Component {
               </div>
             </div>
             <div class="col-md-12">
-              <Link href="/AddNetworks" variant="body2">
+              <Link to="/AddNetworks" variant="body2">
                 <Button class="btn btn-primary float-right">
                   Edit Networks
                 </Button>

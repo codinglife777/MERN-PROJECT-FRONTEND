@@ -8,7 +8,7 @@ import Resume from "./components/Protected/Reports/Resume";
 import Evolution from "./components/Protected/Reports/Evolution";
 import SocialProfile from "./components/Protected/Reports/SocialProfile";
 import Profile from "./components/Protected/Profile/Profile";
-import ProtectedRoute from "./components/Protected/Auth/ProtectedRoute";
+import Error404 from './components/Design/Error404'
 import { Route, Switch } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";
 require('dotenv').config()
@@ -91,6 +91,7 @@ export default class App extends Component {
               <Profile  {...props} user={this.state.loggedInUser} key={this.state.loggedInUser} getUser={this.getTheUser}  />
             )}
           />
+          <Route component={Error404}/>
         </Switch>
       </div>
     );

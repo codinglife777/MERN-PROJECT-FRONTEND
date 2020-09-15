@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import TextField from "@material-ui/core/TextField";
@@ -16,6 +16,7 @@ import Copyright from "../../Design/Copyright";
 import { Redirect } from "react-router-dom";
 import AuthService from "../services/AuthService";
 
+
 export class Login extends Component {
   constructor(props) {
     super(props);
@@ -32,9 +33,26 @@ export class Login extends Component {
       [name]: value,
     }));
   };
+
+  /*const [userLogin,
+    setUserLogin] = useState(initialState);*/
+
   handleSubmit = (e) => {
     e.preventDefault();
     const { username, password } = this.state;
+
+    /*
+    axios.post(`http://localhost:3000/api/auth/login`, {
+      username,
+      password
+  }, {withCredentials: true}).then(response => {
+      this.props.setUserSession(response.data);
+      this.props.history.push("/profile/" + response.data._id)
+  }).catch(err => setUserLogin(userLogin => ({
+      ...userLogin,
+      errorMessage: err.response.data.message
+  })))*/
+ 
     this.service
       .login(username, password)
       .then((response) => {
@@ -43,6 +61,7 @@ export class Login extends Component {
           password: "",
         });
         this.props.getUser(response);
+     
         this.props.history.push("/profile");
       })
       .catch((error) => console.log(error));

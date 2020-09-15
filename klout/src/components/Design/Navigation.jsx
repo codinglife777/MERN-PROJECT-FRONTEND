@@ -3,7 +3,6 @@ import { makeStyles } from "@material-ui/core/styles";
 import Fab from "@material-ui/core/Fab";
 import TimelineSharpIcon from "@material-ui/icons/TimelineSharp";
 import HomeIcon from "@material-ui/icons/Home";
-import EmojiEventsSharpIcon from "@material-ui/icons/EmojiEventsSharp";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import BarChartIcon from "@material-ui/icons/BarChart";
 import { Link } from "react-router-dom";
