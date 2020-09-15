@@ -134,7 +134,7 @@ Ranking model
 The url to your repository and to your deployed project
 
 - [Repository Link Frontend](https://github.com/jesussantana/MERN-PROJECT-FRONTEND)
-- [Repository Link Backend](https://github.com/jesussantana/MERN-PROJECT-BACKEND)
+- [Repository Link Backend](https://github.com/jesussantana/KLOUT)
 
 - [Deploy Link]()
 
