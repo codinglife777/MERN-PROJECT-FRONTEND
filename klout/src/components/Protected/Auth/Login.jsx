@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, { Component } from "react";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import TextField from "@material-ui/core/TextField";
@@ -16,55 +16,30 @@ import Copyright from "../../Design/Copyright";
 import { Redirect } from "react-router-dom";
 import AuthService from "../services/AuthService";
 
-
-export class Login extends Component {
+export default class Login extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      username: "",
-      password: "",
-    };
+    this.state = { username: "", password: "" };
     this.service = new AuthService();
   }
-  handleChange = ({ target }) => {
-    const { name, value } = target;
-    this.setState((state) => ({
-      ...state,
-      [name]: value,
-    }));
-  };
 
-  /*const [userLogin,
-    setUserLogin] = useState(initialState);*/
-
-  handleSubmit = (e) => {
-    e.preventDefault();
-    const { username, password } = this.state;
-
-    /*
-    axios.post(`http://localhost:3000/api/auth/login`, {
-      username,
-      password
-  }, {withCredentials: true}).then(response => {
-      this.props.setUserSession(response.data);
-      this.props.history.push("/profile/" + response.data._id)
-  }).catch(err => setUserLogin(userLogin => ({
-      ...userLogin,
-      errorMessage: err.response.data.message
-  })))*/
- 
+  handleFormSubmit = (event) => {
+    event.preventDefault();
+    const username = this.state.username;
+    const password = this.state.password;
     this.service
       .login(username, password)
       .then((response) => {
-        this.setState({
-          username: "",
-          password: "",
-        });
+        this.setState({ username: "", password: "" });
         this.props.getUser(response);
-     
-        this.props.history.push("/profile");
+        this.props.history.push("/profile"+response.data._id);
       })
       .catch((error) => console.log(error));
+  };
+
+  handleChange = (event) => {
+    const { name, value } = event.target;
+    this.setState({ [name]: value });
   };
 
   useStyles = makeStyles((theme) => ({
@@ -78,97 +53,85 @@ export class Login extends Component {
   }));
 
   render() {
-    const { redirectToReferrer } = this.state;
+    return (
+      <Container component="main" maxWidth="xs">
+        <CssBaseline />
+        <Grid container direction="column" justify="center" alignItems="center">
+          <Logo />
+          <Slogan />
 
-    if (redirectToReferrer === true) {
-      return <Redirect to="/HomeResume" />;
-    } else {
-      return (
-        <Container component="main" maxWidth="xs">
-          <CssBaseline />
-          <Grid
-            container
-            direction="column"
-            justify="center"
-            alignItems="center"
-          >
-            <Logo />
-            <Slogan />
+          <Typography component="h1" variant="h5">
+            Sign in
+          </Typography>
+          <form className={this.useStyles.form} onSubmit={this.handleFormSubmit}>
+            <h1>{this.state._id}</h1>
+            <TextField
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
+              id="username"
+              label="Username"
+              name="username"
+              autoComplete=""
+              autoFocus
+              value={this.state.username}
+              onChange={ e => this.handleChange(e)}
+            />
+            <TextField
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
+              name="password"
+              label="Password"
+              type="password"
+              id="password"
+              autoComplete=""
+              value={this.state.password}
+              onChange={ e => this.handleChange(e)}
+            />
 
-            <Typography component="h1" variant="h5">
-              Sign in
-            </Typography>
-            <form className={this.useStyles.form} onSubmit={this.handleSubmit}>
-              <h1>{this.state._id}</h1>
-              <TextField
-                variant="outlined"
-                margin="normal"
-                required
-                fullWidth
-                id="username"
-                label="Username"
-                name="username"
-                autoComplete=""
-                autoFocus
-                value={this.state.username}
-                onChange={this.handleChange}
-              />
-              <TextField
-                variant="outlined"
-                margin="normal"
-                required
-                fullWidth
-                name="password"
-                label="Password"
-                type="password"
-                id="password"
-                autoComplete=""
-                value={this.state.password}
-                onChange={this.handleChange}
-              />
+            <FormControlLabel
+              control={<Checkbox value="remember" color="primary" />}
+              label="Remember me"
+            />
+            <br />
 
-              <FormControlLabel
-                control={<Checkbox value="remember" color="primary" />}
-                label="Remember me"
-              />
-              <br />
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              color="primary"
+              value="Login"
+              className={this.useStyles.submit}
+            >
+              SIGN IN
+            </Button>
 
-              <Button
-                type="submit"
-                fullWidth
-                variant="contained"
-                color="primary"
-                value="Login"
-                className={this.useStyles.submit}
-              >
-                SIGN IN
-              </Button>
-
-              <br />
-              <br />
-              <Grid container>
-                <Grid item xs>
-                  <Link href="/" variant="body2">
-                    {"Return to Home"}
-                  </Link>
-                </Grid>
-                <Grid item>
-                  <Link href="/SignUp" variant="body2">
-                    {"Don't have an account? Sign Up"}
-                  </Link>
-                </Grid>
+            <br />
+            <br />
+            <Grid container>
+              <Grid item xs>
+                <Link href="/" variant="body2">
+                  {"Return to Home"}
+                </Link>
               </Grid>
-            </form>
-          </Grid>
-          <br />
-          <br />
-          <Box mb={0}>
-            <Copyright />
-          </Box>
-        </Container>
-      );
-    }
+              <Grid item>
+                <Link href="/SignUp" variant="body2">
+                  {"Don't have an account? Sign Up"}
+                </Link>
+              </Grid>
+            </Grid>
+          </form>
+        </Grid>
+        <br />
+        <br />
+        <Box mb={0}>
+          <Copyright />
+        </Box>
+      </Container>
+    );
   }
 }
 
-export default Login;
