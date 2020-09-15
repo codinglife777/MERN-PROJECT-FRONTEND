@@ -99,7 +99,7 @@ function AddNetworks() {
           Add Your Networks
           <br />
           <br />
-          <Link to="/homeresume">
+          <Link to="/resume">
             <FacebookLoginButton>
               <span>Add Facebook</span>
             </FacebookLoginButton>
