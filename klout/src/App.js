@@ -60,7 +60,14 @@ export default class App extends Component {
           />
           <Switch>
             <Route exact path="/" render={() => <Home />} />
-
+            <Route
+              path="/login"
+              render={() => <Resume getUser={this.getTheUser} />}
+            />
+            <Route
+              path="/signup"
+              render={() => <Resume getUser={this.getTheUser} />}
+            />
             <Route
               path="/logout"
               render={(props) => (

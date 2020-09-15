@@ -63,7 +63,8 @@ export default class CardProfile extends Component {
 
     getUser = () => {
       axios
-        .get("http://localhost:3000/api/user/:id/"+this.state.loggedInUser._id)
+        .get("http://localhost:3000/api/user/:id/5f6062f48e57521fd078c4c2"/*+this.state.loggedInUser._id*/)
+       
         .then(({ data }) => {
           this.setState({
             username: data.username,

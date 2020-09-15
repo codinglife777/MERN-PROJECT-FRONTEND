@@ -13,7 +13,6 @@ import Typography from "@material-ui/core/Typography";
 import Logo from "../../Design/Logo";
 import Slogan from "../../Design/Slogan";
 import Copyright from "../../Design/Copyright";
-import { Redirect } from "react-router-dom";
 import AuthService from "../services/AuthService";
 
 export default class Login extends Component {
@@ -32,7 +31,9 @@ export default class Login extends Component {
       .then((response) => {
         this.setState({ username: "", password: "" });
         this.props.getUser(response);
-        this.props.history.push("/profile"+response.data._id);
+        
+
+        this.props.history.push("/addnetworks" /*+response.data._id*/);
       })
       .catch((error) => console.log(error));
   };
