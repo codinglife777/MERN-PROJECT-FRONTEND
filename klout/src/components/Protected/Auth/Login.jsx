@@ -13,21 +13,28 @@ import Typography from "@material-ui/core/Typography";
 import Logo from "../../Design/Logo";
 import Slogan from "../../Design/Slogan";
 import Copyright from "../../Design/Copyright";
-import AuthService from "./AuthService";
 import { Redirect } from "react-router-dom";
+import AuthService from "../services/AuthService";
 
-
-export default class Login extends Component {
+export class Login extends Component {
   constructor(props) {
     super(props);
-    this.state = { username: "", password: "" };
+    this.state = {
+      username: "",
+      password: "",
+    };
     this.service = new AuthService();
   }
-  handleFormSubmit = (event) => {
-    event.preventDefault();
-    const username = this.state.username;
-    const password = this.state.password;
-
+  handleChange = ({ target }) => {
+    const { name, value } = target;
+    this.setState((state) => ({
+      ...state,
+      [name]: value,
+    }));
+  };
+  handleSubmit = (e) => {
+    e.preventDefault();
+    const { username, password } = this.state;
     this.service
       .login(username, password)
       .then((response) => {
@@ -36,14 +43,9 @@ export default class Login extends Component {
           password: "",
         });
         this.props.getUser(response);
-        this.props.history.push("/AddNetworks");
+        this.props.history.push("/profile");
       })
       .catch((error) => console.log(error));
-  };
-
-  handleChange = (event) => {
-    const { name, value } = event.target;
-    this.setState({ [name]: value });
   };
 
   useStyles = makeStyles((theme) => ({
@@ -77,11 +79,8 @@ export default class Login extends Component {
             <Typography component="h1" variant="h5">
               Sign in
             </Typography>
-            <form
-              className={this.useStyles.form}
-              onSubmit={this.handleFormSubmit}
-            >
-            
+            <form className={this.useStyles.form} onSubmit={this.handleSubmit}>
+              <h1>{this.state._id}</h1>
               <TextField
                 variant="outlined"
                 margin="normal"
@@ -93,7 +92,7 @@ export default class Login extends Component {
                 autoComplete=""
                 autoFocus
                 value={this.state.username}
-                onChange={(e) => this.handleChange(e)}
+                onChange={this.handleChange}
               />
               <TextField
                 variant="outlined"
@@ -106,8 +105,9 @@ export default class Login extends Component {
                 id="password"
                 autoComplete=""
                 value={this.state.password}
-                onChange={(e) => this.handleChange(e)}
+                onChange={this.handleChange}
               />
+
               <FormControlLabel
                 control={<Checkbox value="remember" color="primary" />}
                 label="Remember me"
@@ -122,8 +122,9 @@ export default class Login extends Component {
                 value="Login"
                 className={this.useStyles.submit}
               >
-                Sign In
+                SIGN IN
               </Button>
+
               <br />
               <br />
               <Grid container>
@@ -150,3 +151,5 @@ export default class Login extends Component {
     }
   }
 }
+
+export default Login;

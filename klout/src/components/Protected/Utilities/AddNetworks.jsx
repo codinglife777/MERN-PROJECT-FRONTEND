@@ -1,16 +1,8 @@
-import {
-  Container,
-  Grid,
-  CssBaseline,
-  Box,
-  Avatar,
-  Fab,
-} from "@material-ui/core";
+import { Container, Grid, CssBaseline, Box, Fab } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import React from "react";
 import {
   FacebookLoginButton,
-  GoogleLoginButton,
   TwitterLoginButton,
   InstagramLoginButton,
   LinkedInLoginButton,

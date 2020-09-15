@@ -13,7 +13,7 @@ import Container from "@material-ui/core/Container";
 import Logo from "../../Design/Logo";
 import Slogan from "../../Design/Slogan"
 import Copyright from "../../Design/Copyright";
-import AuthService from "./AuthService";
+import AuthService from "../services/AuthService";
 
 export default class SignUp extends Component {
   constructor(props) {
@@ -25,6 +25,7 @@ export default class SignUp extends Component {
     event.preventDefault();
     const username = this.state.username;
     const password = this.state.password;
+    
 
     this.service
       .signup(username, password)
