@@ -4,6 +4,7 @@ import CloudUploadIcon from "@material-ui/icons/CloudUpload";
 import axios from "axios";
 import "./profile.css";
 import { Link } from "react-router-dom";
+import AuthService from '../services/AuthService';
 
 const useStyles = makeStyles((theme) => ({
   avatar: {
@@ -22,20 +23,47 @@ const useStyles = makeStyles((theme) => ({
 export default class CardProfile extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      username: this.props.username,
-      password: this.props.password,
-      image: this.props.image,
-      _id: this.props._id,
-    };
-
-    this.componentDidMount = () => {
+    this.state = { loggedInUser: null };
+    this.service = new AuthService();
+    
+  }
+ 
+  componentWillReceiveProps(nextProps) {
+    this.setState({...this.state, loggedInUser: nextProps["userInSession"]});
+  }
+ 
+  logoutUser = () =>{
+    this.service.logout()
+    .then(() => {
+      this.setState({ loggedInUser: null });
+      this.props.getUser(null);  
+    })
+  }
+   componentDidMount = () => {
       this.getUser();
+      this.fetchUser();
     };
+  
+    fetchUser() {
+      if (this.state.loggedInUser === null) {
+        this.service
+          .loggedin()
+          .then((response) => {
+            this.setState({
+              loggedInUser: response,
+            });
+          })
+          .catch((err) => {
+            this.setState({
+              loggedInUser: false,
+            });
+          });
+      }
+    }
 
-    this.getUser = () => {
+    getUser = () => {
       axios
-        .get("http://localhost:3000/api/user/:id/5f5f587025d58e2dd37c5593"/*+ this.props._id*/)
+        .get("http://localhost:3000/api/user/:id/"+this.state.loggedInUser._id)
         .then(({ data }) => {
           this.setState({
             username: data.username,
@@ -52,14 +80,14 @@ export default class CardProfile extends Component {
 
   
     
-    this.handleChange = ({ target }) => {
+    handleChange = ({ target }) => {
       const { name, value } = target;
       this.setState({
         [name]: value,
       });
     };
 
-    this.handleSave = (e) => {
+    handleSave = (e) => {
       e.preventDefault();
       axios
         .put(
@@ -74,7 +102,7 @@ export default class CardProfile extends Component {
           console.log(err);
         });
     };
-  }
+  
   render() {
     return (
       <div class="container-fluid">
@@ -85,6 +113,7 @@ export default class CardProfile extends Component {
               
                 <h8>{this.state._id}</h8>
                 <h4>{this.state.username}</h4>
+               
                 <div class="card-avatar">
                
                     <img

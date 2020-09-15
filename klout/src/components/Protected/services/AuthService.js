@@ -36,16 +36,13 @@ class AuthService extends Component {
       .then((response) => response.status)
       .catch((error) => error.status);
   };
-
   logout = () => {
-    return this.service
-      .post("/logout", {})
-      .then((response) => response.status === 200);
+    return this.service.post("/logout", {}).then((response) => response.data);
   };
   loggedin = () => {
     return this.service
-      .post("/loggedin")
-      .then((response) => response.status === 200)
+      .get("/loggedin")
+      .then((response) => response.data)
       .catch((error) => error.status === 200);
   };
 }
