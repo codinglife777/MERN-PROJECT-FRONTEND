@@ -4,7 +4,7 @@ function Logo() {
   return (
     <div >
      
-      <img src={process.env.PUBLIC_URL + "/klout.png"} width="150px" />
+      <img src={process.env.PUBLIC_URL + "/klout.png"} width="150px" alt="KloutLogo"/>
       <br />
       
       

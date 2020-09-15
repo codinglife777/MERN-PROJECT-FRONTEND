@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button, Grid, makeStyles, TextField } from "@material-ui/core";
+import { Button, makeStyles, TextField } from "@material-ui/core";
 import CloudUploadIcon from "@material-ui/icons/CloudUpload";
 import axios from "axios";
 import "./profile.css";
@@ -25,38 +25,45 @@ export default class CardProfile extends Component {
     this.state = {
       username: this.props.username,
       password: this.props.password,
+      image: this.props.image,
       _id: this.props._id,
     };
 
     this.componentDidMount = () => {
       this.getUser();
     };
+
     this.getUser = () => {
       axios
-        .get("http://localhost:3000/api/user/:id/" + "5f5a19a44e6db73942125498")
+        .get("http://localhost:3000/api/user/:id/5f5f587025d58e2dd37c5593"/*+ this.props._id*/)
         .then(({ data }) => {
           this.setState({
             username: data.username,
             password: data.password,
             image: data.image,
+            _id:data._id,
           });
         })
         .catch((err) => {
           console.log(err);
         });
     };
+    
+
+  
+    
     this.handleChange = ({ target }) => {
       const { name, value } = target;
       this.setState({
         [name]: value,
       });
     };
+
     this.handleSave = (e) => {
       e.preventDefault();
-
       axios
         .put(
-          "http://localhost:3000/api/user/" + "5f5a19a44e6db73942125498",
+          "http://localhost:3000/api/user/"+this.state._id,
           this.state
         )
         .then((response) => {
@@ -78,22 +85,23 @@ export default class CardProfile extends Component {
                 <p class="card-category text-center text-white">
                   Complete your profile
                 </p>
-
+                <h4>{this.state._id}</h4>
                 <div class="card-avatar">
-                  <a href="">
+               
                     <img
                       id="avatarProfile"
                       class="img-fluid img-profile rounded-circle float-center"
                       src={this.state.image}
+                      alt="Avatar"
                     />
-                  </a>
+                 
                 </div>
               </div>
               <div class="card-body">
                 <form
                   onSubmit={this.handleSave}
                   className={useStyles.form}
-                  action="/app/user"
+                  
                   method="POST"
                   enctype="multipart/form-data"
                 >
@@ -115,7 +123,6 @@ export default class CardProfile extends Component {
                   <div class="row">
                     <div class="col-md-12">
                       <div class="form-group">
-                      
                         <TextField
                           type="text"
                           variant="outlined"
@@ -125,7 +132,7 @@ export default class CardProfile extends Component {
                           id="username"
                           label="Username"
                           name="username"
-                          autoComplete=""
+                          autoComplete="off"
                           autoFocus
                           value={this.state.username}
                           onChange={this.handleChange}
@@ -136,22 +143,19 @@ export default class CardProfile extends Component {
 
                     <div class="col-md-12">
                       <div class="form-group">
-                       
                         <TextField
                           type="password"
                           variant="outlined"
-                          
                           margin="normal"
                           required
                           fullWidth
                           id="password"
                           label="Password"
                           name="password"
-                    
+                          autoComplete="off"
                           value={this.state.password}
                           onChange={this.handleChange}
                           placeholder="password"
-                          required
                         />
                       </div>
                     </div>

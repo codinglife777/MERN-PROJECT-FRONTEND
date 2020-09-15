@@ -4,6 +4,7 @@ import Fab from "@material-ui/core/Fab";
 import TimelineSharpIcon from "@material-ui/icons/TimelineSharp";
 import HomeIcon from "@material-ui/icons/Home";
 import EmojiEventsSharpIcon from "@material-ui/icons/EmojiEventsSharp";
+import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import BarChartIcon from "@material-ui/icons/BarChart";
 import { Link } from "react-router-dom";
 
@@ -31,7 +32,7 @@ export default function FloatingActionButtons() {
       justify="center"
       alignItems="center"
     >
-      <Link to="/HomeResume">&nbsp;&nbsp;&nbsp;
+      <Link to="/Resume">&nbsp;&nbsp;&nbsp;
         <Fab color="secondary">
           <HomeIcon  />
         </Fab>
@@ -46,9 +47,9 @@ export default function FloatingActionButtons() {
        <TimelineSharpIcon  />
         </Fab>
       </Link>
-      <Link to="/Ranking">
+      <Link to="/Profile">
         <Fab Fab color="secondary">
-        <EmojiEventsSharpIcon  />
+        <AccountCircleIcon  />
         </Fab>
       </Link>
     </div>
