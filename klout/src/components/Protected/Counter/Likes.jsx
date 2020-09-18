@@ -4,7 +4,7 @@ import CountUp from 'react-countup';
 function Likes() {
   return (
     <div>
-      <CountUp start={0} end={1000} delay={0}>
+      <CountUp start={0} end={1238} delay={0}>
           {({ countUpRef }) => (
             <div>
               <span ref={countUpRef} />

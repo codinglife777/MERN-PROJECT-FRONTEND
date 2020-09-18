@@ -1,62 +1,10 @@
 
 import React from "react";
 import CountUp from "react-countup";
-import { blue, green, purple, red } from "@material-ui/core/colors";
-import { Grid, makeStyles } from "@material-ui/core";
+import { Grid } from "@material-ui/core";
+import useStyles from "../../Design/useStyles";
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    display: "flex",
-    "& > *": {
-      margin: theme.spacing(1),
-    },
-  },
-  blue: {
-    color: "#fff",
-    backgroundColor: blue[500],
-  },
-  blueText: {
-    color: blue[500],
 
-    fontSize: "x-large",
-  },
-  red: {
-    color: "#fff",
-    backgroundColor: red[500],
-  },
-  redText: {
-    color: red[500],
-
-    fontSize: "x-large",
-  },
-  greenText: {
-    color: green[500],
-
-    fontSize: "x-large",
-  },
-  green: {
-    color: "#fff",
-    backgroundColor: green[500],
-  },
-  black: {
-    color: "#fff",
-    backgroundColor: "black",
-  },
-  blackText: {
-    color: "black",
-
-    fontSize: "x-large",
-  },
-  purple: {
-    color: "#fff",
-    backgroundColor: purple[500],
-  },
-  purpleText: {
-    color: purple[500],
-
-    fontSize: "medium",
-  },
-}));
 function Increase() {
   const classes = useStyles();
   return (

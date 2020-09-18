@@ -1,6 +1,5 @@
 import React from "react";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import Link from "@material-ui/core/Link";
 import Container from "@material-ui/core/Container";
 import { Box, Button} from "@material-ui/core";
 import Grid from "@material-ui/core/Grid";
@@ -8,13 +7,12 @@ import Logo from "../Design/Logo";
 import Copyright from "../Design/Copyright";
 import Slogan from "../Design/Slogan";
 
-function HomePage() {
+function Home(props) {
   return (
     <Container component="main" maxWidth="xs">
       <br />
       <br />
       <br />
-
       <CssBaseline />
       <Grid container direction="column" justify="center" alignItems="center">
         <Logo />
@@ -23,16 +21,26 @@ function HomePage() {
         <br />
         <br />
         <br />
-        <Link href="/SignUp">
-          <Button fullWidth variant="contained" color="secondary" className="">
-            Start
-          </Button>
-        </Link>
+        <Button
+          fullWidth
+          variant="contained"
+          color="secondary"
+          href="/SignUp"
+        >
+          Sign up
+        </Button>
         <br />
         <br />
-        <Link href="/Login" variant="body2">
-          {"Already have an account?  here"}
-        </Link>
+        <Button
+          fullWidth
+          variant="contained"
+          color="primary"
+          href="/LogIn"
+        >
+          Log IN
+        </Button>
+        <br />
+        <br />
       </Grid>
       <br />
       <br />
@@ -43,4 +51,4 @@ function HomePage() {
   );
 }
 
-export default HomePage;
+export default Home;

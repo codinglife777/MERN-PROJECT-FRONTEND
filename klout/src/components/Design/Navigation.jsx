@@ -1,6 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import Fab from "@material-ui/core/Fab";
+import { Fab, Grid } from "@material-ui/core";
 import TimelineSharpIcon from "@material-ui/icons/TimelineSharp";
 import HomeIcon from "@material-ui/icons/Home";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
@@ -10,28 +10,19 @@ import { Link } from "react-router-dom";
 const useStyles = makeStyles((theme) => ({
   root: {
     "& > *": {
-      margin: theme.spacing(2.4),
-      
+      margin: theme.spacing(1.5),
+   
     },
   },
-  extendedIcon: {
-    marginRight: theme.spacing(1),
-    color: "red",
-  },
+
 }));
 
-export default function FloatingActionButtons() {
+export default function Navigation() {
   const classes = useStyles();
 
   return (
-    <div
-      className={classes.root}
-      container
-      direction="column"
-      justify="center"
-      alignItems="center"
-    >
-      <Link to="/Resume">&nbsp;&nbsp;&nbsp;
+    <Grid container direction="row" justify="center" alignItems="center" className={classes.root}>
+      <Link to="/Resume">
         <Fab color="secondary">
           <HomeIcon  />
         </Fab>
@@ -51,6 +42,6 @@ export default function FloatingActionButtons() {
         <AccountCircleIcon  />
         </Fab>
       </Link>
-    </div>
+    </Grid>
   );
 }

@@ -12,18 +12,11 @@ function Error404() {
   return (
     <Container component="main" maxWidth="xs">
       <br />
-      <br />
-      <br />
-
       <CssBaseline />
       <Grid container direction="column" justify="center" alignItems="center">
         <Logo />
         <Slogan />
         <br />
-        <br />
-        <br />
-        <br />
-    
           <h1> Oops! </h1>
           <img
             className="error-page-img"
@@ -35,9 +28,7 @@ function Error404() {
           <h2>
             We can't seem to find the adress you're looking for
           </h2>
-         
       </Grid>
-      <br />
       <br />
       <Box mt={0}>
       <Navigation />

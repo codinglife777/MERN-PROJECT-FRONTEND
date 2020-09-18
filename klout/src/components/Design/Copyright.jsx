@@ -8,15 +8,12 @@ function Copyright() {
   
   return (
     <Box>
-    
-      
       <Grid container direction="column" justify="center" alignItems="center">
       <Typography variant="body2" color="textSecondary" align="center">
       <Grid item xs>
       <Link color="inherit" to="/LogOut"><ExitToAppIcon /></Link>
       </Grid>
-      <br/>
-      <br/>
+      <br />
       <Grid item>
       {"Copyright © "}
         <Link color="inherit" to="/">
@@ -27,7 +24,6 @@ function Copyright() {
       </Grid>
       </Typography>
       </Grid>
-   
     </Box>
   );
 }
